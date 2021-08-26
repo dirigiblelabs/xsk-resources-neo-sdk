@@ -1,12 +1,3 @@
-# XSK Resources - Neo SDK
-
-The **synchronizer.js** is responsible for extracting the Neo SDK content from the `xsk-resources-neo-sdk-xxx.jar` to the `${user.dir}/target/dirigible/` directory.
-
-Under the same directory is stored the content of `h2`, `.git` and `repository`.
-
-**synchronizer.js**
-
-```javascript
 /*
  * Copyright (c) 2021 SAP SE or an SAP affiliate company and XSK contributors
  *
@@ -55,7 +46,8 @@ function copyNeoSdk(targetLocation) {
                             files.writeBytesNative(filePath, zipInputStream.readNative());
                             files.setPermissions(filePath, NEO_SDK_FILE_PERMISSION);
                         } catch (e) {
-                            console.error(`Error occured while coping Neo SDK, for file [${filePath}]: ${e}`);
+                            // Do nothing
+                            // console.error(`Error occured while coping Neo SDK, for file [${filePath}]: ${e}`);
                         }
                     }
                     zipEntry = zipInputStream.getNextEntry();
@@ -82,7 +74,7 @@ function getNeoSdkResourcesPath() {
         catalinaHome = userDir.endsWith("/bin") ? userDir.substring(0, userDir.lastIndexOf("/")) : userDir;
     }
     let libPath = catalinaHome + "/webapps/ROOT/WEB-INF/lib/";
-    let neoSdkResourcesPath = files.list(libPath).filter(e => e.contains("xsk-resources-neo-sdk"))[0];
+    let neoSdkResourcesPath = files.list(libPath).filter(e => e.contains("xsk-resources-neo-sdk") && !e.contains("xsk-resources-neo-sdk-synchronizer"));
     return neoSdkResourcesPath;
 }
 
