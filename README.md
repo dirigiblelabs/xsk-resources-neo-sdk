@@ -7,6 +7,17 @@ Under the same directory is stored the content of `h2`, `.git` and `repository`.
 **synchronizer.js**
 
 ```javascript
+/*
+ * Copyright (c) 2021 SAP SE or an SAP affiliate company and XSK contributors
+ *
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Apache License, v2.0
+ * which accompanies this distribution, and is available at
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * SPDX-FileCopyrightText: 2021 SAP SE or an SAP affiliate company and XSK contributors
+ * SPDX-License-Identifier: Apache-2.0
+ */
 let zip = require("io/v4/zip");
 let files = require("io/v4/files");
 let config = require("core/v4/configurations");
@@ -35,8 +46,8 @@ function copyNeoSdk(targetLocation) {
                 zipInputStream = zip.createZipInputStream(inputStream);
                 let zipEntry = zipInputStream.getNextEntry();
                 while (zipEntry.isValid()) {
-                    if (isNeoSdkFile(zipEntry)) {
-                        let filePath = targetLocation + getNeoSdkFilePath(zipEntry);
+                    let filePath = targetLocation + getNeoSdkFilePath(zipEntry);
+                    if (isNeoSdkFile(zipEntry) && !files.exists(filePath)) {
                         let fileDirectory = filePath.substring(0, filePath.lastIndexOf("/"));
                         try {
                             files.createDirectory(fileDirectory);
