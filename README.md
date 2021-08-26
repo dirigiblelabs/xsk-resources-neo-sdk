@@ -1,4 +1,4 @@
-# Neo SDK
+# XSK Resources - Neo SDK
 
 The **synchronizer.js** is responsible for extracting the Neo SDK content from the `xsk-resources-neo-sdk-xxx.jar` to the `${user.dir}/target/dirigible/` directory.
 
