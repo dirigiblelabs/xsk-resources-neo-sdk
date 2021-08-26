@@ -4,14 +4,16 @@ let config = require("core/v4/configurations");
 
 const NEO_SDK_FILE_PERMISSION = "rwxr-x---";
 
-let startDate = new Date();
-let targetLocation = config.get("user.dir") + "/target/dirigible/";
-console.log(`Start coping Neo SDK.`);
+exports.synchronize = function() {
+    let startDate = new Date();
+    let targetLocation = config.get("user.dir") + "/target/dirigible/";
+    console.log(`Start coping Neo SDK.`);
 
-copyNeoSdk(targetLocation);
+    copyNeoSdk(targetLocation);
 
-let time = (new Date().getTime() - startDate.getTime()) / 1000;
-console.log(`Coping Neo SDK finished for ${time} seconds.`);
+    let time = (new Date().getTime() - startDate.getTime()) / 1000;
+    console.log(`Coping Neo SDK finished for ${time} seconds.`);
+};
 
 function copyNeoSdk(targetLocation) {
     let inputStream = null;
