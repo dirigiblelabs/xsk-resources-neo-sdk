@@ -83,7 +83,7 @@ function getNeoSdkResourcesPath() {
         catalinaHome = userDir.endsWith("/bin") ? userDir.substring(0, userDir.lastIndexOf("/")) : userDir;
     }
     let libPath = catalinaHome + "/webapps/ROOT/WEB-INF/lib/";
-    let neoSdkResourcesPath = files.list(libPath).filter(e => e.contains("xsk-resources-neo-sdk") && !e.contains("xsk-resources-neo-sdk-synchronizer"));
+    let neoSdkResourcesPath = files.list(libPath).filter(e => e.contains("xsk-resources-neo-sdk") && !e.contains("xsk-resources-neo-sdk-synchronizer"))[0];
     return neoSdkResourcesPath;
 }
 
