@@ -1,3 +1,12 @@
+# XSK Resources - Neo SDK
+
+The **synchronizer.js** is responsible for extracting the Neo SDK content from the `xsk-resources-neo-sdk-xxx.jar` to the `${user.dir}/target/dirigible/` directory.
+
+Under the same directory is stored the content of `h2`, `.git` and `repository`.
+
+**synchronizer.js**
+
+```javascript
 /*
  * Copyright (c) 2021 SAP SE or an SAP affiliate company and XSK contributors
  *
