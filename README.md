@@ -4,6 +4,9 @@ The **synchronizer.js** is responsible for extracting the Neo SDK content from t
 
 Under the same directory is stored the content of `h2`, `.git` and `repository`.
 
+- Source: [neo-sdk-synchronizer/synchronizer.js](https://github.com/SAP/xsk/blob/b7d6946c6e16b48289d6fdcb7281d94789383ce1/resources/resources-neo-sdk-synchronizer/src/main/resources/META-INF/dirigible/neo-sdk-synchronizer/synchronizer.js)
+- Usage: [XSKResourcesNeoSdkSynchronizer.java#L42-L43](https://github.com/SAP/xsk/blob/b7d6946c6e16b48289d6fdcb7281d94789383ce1/resources/resources-neo-sdk-synchronizer/src/main/java/com/sap/xsk/resources/neo/sdk/synchronizer/XSKResourcesNeoSdkSynchronizer.java#L42-L43)
+
 **synchronizer.js**
 
 ```javascript
