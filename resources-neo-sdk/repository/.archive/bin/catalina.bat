@@ -31,7 +31,7 @@ rem   script will have no effect at all on Windows Services. As such, any
 rem   local customizations made in a CATALINA_BASE/bin/setenv.bat script
 rem   will also have no effect on Tomcat when launched as a Windows Service.
 rem   The configuration that controls Windows Services is stored in the Windows
-rem   Registry, and is most conveniently maintained using the "tomcat9w.exe"
+rem   Registry, and is most conveniently maintained using the "tomcat8w.exe"
 rem   maintenance utility.
 rem
 rem   CATALINA_HOME   May point at your Catalina "build" directory.
